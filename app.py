@@ -22,6 +22,11 @@ def clean_text(text):
     return text 
 
 # Create app route
+
+@app.route('/')
+def home():
+    return "End to End Sentiment Analysis API is running!"
+
 @app.route('/predict', methods=['POST'])
 def predict():
     try:
