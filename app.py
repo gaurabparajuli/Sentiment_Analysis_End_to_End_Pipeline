@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 import pickle
 import re
 import string 
+import os
 
 # Load the trained model and vectorizer 
 with open('logistic_regression_tfidf.pkl', 'rb') as model_file:
@@ -53,4 +54,5 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
