@@ -7,7 +7,7 @@ import string
 with open('logistic_regression_tfidf.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
-with open('vectorizer.pkl', 'rb') as vectorizer_file:
+with open('Vectorizer.pkl', 'rb') as vectorizer_file:
     vectorizer = pickle.load(vectorizer_file)
 
 # Initialize Flask app
